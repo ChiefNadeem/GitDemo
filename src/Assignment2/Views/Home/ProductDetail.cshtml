@@ -1,0 +1,171 @@
+@model IEnumerable<Assignment2.Models.TblProduct>
+
+@{
+    ViewData["Title"] = "ProductDetail";
+}
+
+<h2>ProductDetail</h2>
+
+@foreach (var item in Model)
+{
+    <div class="col-md-4">
+        <div class="panel panel-default ProductDivBG">
+            <div class="panel-heading">
+                <img class="img-responsive" src="~/Data/pimg/@item.ProductImage" />
+            </div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        @item.ProductName
+                    </div>
+                    <div class="col-md-3">
+                        @item.ProductDiscription
+                    </div>
+                    <div class="col-md-3">
+                        @item.ProductPrice
+                    </div>
+                    <div class="col-md-3">
+
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+               
+
+            </div>
+            <div class="panel-footer">
+                <a class="btn btn-default" href="/Home/ProductDescription/@item.Productid">View detail
+                </a>
+            </div>
+        </div>
+    </div>
+}
+@*
+        @foreach (var item in Model)
+        {
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                <div class="col-md-4 center-block ProductDivBG">
+                    <div class="panel-heading">
+                        <div class="col-md-12 ">
+                            <img class="img-responsive" src="~/Data/pimg/04102016083112.png" />
+                        </div>
+                    </div>
+
+                        <div class="col-md-12">
+                            title
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="col-md-3">
+
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button>View Detail</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+        <p>
+            <a asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Productid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Scategoryid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Categoryid)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductDiscription)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductPrice)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProductImage)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CreatedBy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ModifyDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ModifyBy)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Productid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Scategoryid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Categoryid)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductDiscription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductImage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifyDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ModifyBy)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+        }
+
+        </tbody>
+    </table>
+*@

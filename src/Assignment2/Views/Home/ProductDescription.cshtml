@@ -1,0 +1,120 @@
+@model Assignment2.Models.TblProduct
+
+@{
+    ViewData["Title"] = "ProductDescription";
+}
+
+<h2 class="pull-right">Product Description</h2>
+
+<div class="col-md-12">
+    <div class="col-md-6">
+        <span class="zoom" id="img">
+            <img src="~/Data/pimg/@Model.ProductImage" width="400" hieght="500" />
+        </span>
+    </div>
+    <div class="col-md-6" style="border:groove">
+        <div class="col-md-12">
+         Product Name: &nbsp;  @Model.ProductName
+        </div>
+        <hr />
+        <div class="col-md-12">
+          Product Description: &nbsp; @Model.ProductDiscription  
+        </div>
+        <hr />
+        <div class="col-md-12">
+          Product Price: &nbsp;  @Model.ProductPrice
+        </div>
+        <hr /> 
+    </div>
+</div>
+
+
+@*
+
+    <div>
+        <h4>TblProduct</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Productid)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Productid)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Scategoryid)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Scategoryid)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Categoryid)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Categoryid)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductName)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductDiscription)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductDiscription)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductPrice)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductPrice)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ProductImage)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ProductImage)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.CreatedBy)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifyDate)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModifyDate)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ModifyBy)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ModifyBy)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+        <a asp-action="Index">Back to List</a>
+    </div>
+*@
+
+@section scripts{
+<script>
+    $(document).ready(function () {
+        //alert(1);
+       $('#img').zoom();
+        //$('#img').zoom({ on: 'grab' });
+    });
+</script>
+    }

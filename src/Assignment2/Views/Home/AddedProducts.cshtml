@@ -1,0 +1,62 @@
+<div>
+    <div class="col-md-2">
+        <h3 >Categories</h3>
+    </div>
+    <div class="col-md-10">
+        <h3>Products</h3>
+    </div>
+</div>
+@using Sakura.AspNetCore;
+@model IPagedList<Assignment2.Models.TblProduct>
+@{
+    ViewData["Title"] = "AddedProducts";
+}
+
+
+
+
+<div class="col-md-12">
+    
+        <div class="col-md-2">
+            @{
+                IList<TblCategory> C = ViewBag.category;
+                var category = Html.Partial("ViewCategory", C);
+                @category;
+            }
+        </div>
+    
+    <div class="col-md-10 col-sm-4">
+        @foreach (var item in Model)
+        {
+
+            <div class="panel panel-info col-md-4">
+                <div class="panel panel-heading">
+                    <a href="/Home/ProductDescription/@item.Productid">
+                    @*<a href="/Home/ProductsDescription?ProId=@Html.DisplayFor(modelItem=>item.Productid)"> *@
+                        <img src="~/Data/pimg/@item.ProductImage" style="width:200px ;height:200px" class="img-responsive img-rounded" />
+                    </a>
+                </div>
+                <div class="panel panel-body ">
+                    Name: @Html.DisplayFor(modelItem => item.ProductName)
+                    <br />
+                    Desccription:@Html.DisplayFor(modelItem => item.ProductDiscription)
+                    
+                </div>
+                <div class="panel panel-footer">
+                    <h3 class="panel-title">@Html.DisplayFor(modelItem => item.ProductPrice)</h3>
+                </div>
+            </div>
+
+        }
+    </div>
+    <div class="clearfix"></div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<div class="col-md-12 pull-right">
+
+    <pager source="@Model" />
+
+</div>
+<hr />

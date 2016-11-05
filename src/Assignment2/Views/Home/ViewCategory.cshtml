@@ -1,0 +1,15 @@
+@model IEnumerable<Assignment2.Models.TblCategory>
+
+@foreach (var item in Model)
+            {
+    <div></div>
+    <li style="text-align:left; ">
+        <h4 class="panel ">
+          
+                <a href="~/Home/AddedProducts/@item.Categoryid">
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </a>
+        </h4>
+    </li>
+            }
+@*  <a href="AddedProducts?category=@Html.DisplayFor(modelItem => item.Categoryid)"> *@

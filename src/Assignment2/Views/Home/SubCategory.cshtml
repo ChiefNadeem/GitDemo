@@ -1,0 +1,71 @@
+@model Assignment2.Models.TblSubCategory
+
+@{
+    ViewData["Title"] = "SubCategory";
+}
+
+<h2>SubCategory</h2>
+
+    @if (ViewBag.message != null && ViewBag.message != "")
+    {
+        <h3 class="alert alert-success">@ViewBag.message</h3>
+    }
+
+
+<div class="panel panel-danger">
+    @{
+
+
+        IList<TblCategory> CatL = ViewBag.CL;
+
+        SelectList CSL = new SelectList(CatL, "Categoryid", "CategoryName");
+    }
+
+</div>
+
+    <div class="panel panel-danger">
+
+    </div>
+
+
+
+<form asp-action="SubCategory">
+    <div class="form-horizontal">
+        <h4>TblSubCategory</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="form-group">
+           <label asp-for="Categoryid" class="col-md-2 control-label">Select Category</label>     
+            <div class="col-md-10">
+                
+                @Html.DropDownList("Categoryid", CSL,"Select Category",new { @class ="form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ScategoryName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ScategoryName" class="form-control" />
+                <span asp-validation-for="ScategoryName" class="text-danger" />
+            </div>
+        </div>
+
+
+
+       
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

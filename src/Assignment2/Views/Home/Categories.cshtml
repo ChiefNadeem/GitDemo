@@ -1,0 +1,10 @@
+@model IEnumerable<Assignment2.Models.TblCategory>
+@using Sakura.AspNetCore;
+<div>
+    @{
+        IList<TblCategory> CatL = ViewBag.CL;
+        var Products = Html.Partial("AddedProducts", "Home");
+        @Products;
+
+    }
+</div>
